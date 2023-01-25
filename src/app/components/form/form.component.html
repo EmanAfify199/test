@@ -1,0 +1,51 @@
+<div class="conform">
+<div class="container mt-3">
+    <div class="row col-6">
+        <div>
+            <form class="myform" [formGroup]="loginform" (ngSubmit)="login()">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="exampleInputName" aria-describedby="namelHelp" placeholder="Enter your name"
+                  formControlName="name">
+                  <ng-container>
+                    <div *ngIf="getName.touched" id="namelHelp" class="form-text text-danger" >
+                        <p *ngIf="getName.hasError('required')">Name is required</p>
+                        <p *ngIf="getName.hasError('pattern')">Name must be a string</p>
+                    </div>
+                  </ng-container>
+                  <!-- <div *ngIf="getName.touched" id="namelHelp" class="form-text text-danger">{{getName.errors|json}}</div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email"
+                    formControlName="email">
+                    <ng-container>
+                        <div *ngIf="getEmail.touched" id="namelHelp" class="form-text text-danger" >
+                            <p *ngIf="getEmail.hasError('required')">Email is required</p>
+                            <p *ngIf="getEmail.hasError('email')">Enter vaild email</p>
+                        </div>
+                      </ng-container>
+                    <!-- <div *ngIf="getEmail.touched" id="emailHelp" class="form-text text-danger">{{getEmail.errors|json}}</div> -->
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password"
+                  formControlName="password">
+                  <ng-container>
+                    <div *ngIf="getPassword.touched" id="namelHelp" class="form-text text-danger" >
+                        <!-- {{getPassword.errors |json}} -->
+                        <p *ngIf="getPassword.hasError('required')">Password is required</p>
+                        <p *ngIf="getPassword.hasError('maxlength')">Password must be less than 10 </p>
+                    </div>
+                  </ng-container>
+                  <!-- <div *ngIf="getPassword.touched" id="passwordlHelp" class="form-text text-danger">{{getPassword.errors|json}}</div> -->
+                  <!-- <p>{{loginform.value |json}}</p> -->
+
+                </div>
+
+                <button type="submit" class="btn btn-success">{{userid?'Edit user':'Add new user'}}</button>
+              </form>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+.mynav{
+    background-color:	#32CD32;
+    padding: 10px;
+}
+.nav-pages{
+    text-decoration: none;
+    color: white;
+    margin: 0  90px ;
+}
+.mylogo{
+    color: white;
+}
+
+.nav-pages:hover{
+    color: black;
+}
+.test{
+    background-color:  #8cef8c;
+    box-shadow: #32CD32;
+    padding: 1.2rem 1rem;
+}
